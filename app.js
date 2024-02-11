@@ -3,6 +3,7 @@ const cors=require("cors")
 const mongoose=require("mongoose")
 
 const signupRoute=require("./controller/signupRouter")
+const postRoute=require("./controller/postRouter")
 
 const app=express()
 
@@ -14,6 +15,7 @@ useNewUrlParser: true
 })
 
 app.use("/api/signup",signupRoute)
+app.use("/api/post",postRoute)
 
 app.listen(3001,()=>{
     console.log("server running")
