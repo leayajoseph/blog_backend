@@ -10,6 +10,12 @@ hashPasswordGenerator=async(pass)=>{
     return bcrypt.hash(pass,salt)
 }
 
+router.get("/view_user",async(req,res)=>{
+    let data=req.body
+    let result=await signupModel.find()
+    res.json(result)
+})
+
 router.post("/add",async(req,res)=>{
    // let data=req.body
    
